@@ -1,4 +1,4 @@
-server.port: ${PORT:9999}
+server.port: ${PORT:8080}
 
 spring.application.name: api-gateway
 
@@ -9,7 +9,7 @@ eureka.client.serviceUrl.defaultZone: http://${eureka.hostname}:${eureka.port}/e
 eureka.client.registerWithEureka: true
 
 zuul:
-    prefix: /assignment
+    prefix: /api
     routes:
         product-service:
             path: /product/**
@@ -17,9 +17,12 @@ zuul:
         cart-service:
             path: /cart/**
             serviceId: cart-service
+            stripPrefix: true
         discount-service:
             path: /discount/**
             serviceId: discount-service
+            stripPrefix: true
         delivery-service:
             path: /delivery/**
             serviceId: delivery-service
+            stripPrefix: true

@@ -19,7 +19,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <docker.image.prefix>docker.pkg.github.com/betulcetinkaya</docker.image.prefix>
+        <docker.image.prefix>betulcetinkaya</docker.image.prefix>
         <docker.image.repo>api-gateway</docker.image.repo>
         <docker.plugin.version>0.4.9</docker.plugin.version>
         <java.version>11</java.version>
@@ -88,7 +88,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <repository>${docker.image.prefix}/${project.artifactId}/${docker.image.repo}</repository>
+                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>

@@ -1,11 +1,11 @@
 version: '3.1'
 services:
   api-gateway:
-    image: docker.pkg.github.com/betulcetinkaya/api-gateway/${IMAGE_NAME}:${TAG}
+    image: betulcetinkaya/api-gateway:${TAG}
     container_name: api-gateway
     env_file: docker-compose.env
     ports:
-      - 80:80
+      - 8080:8080
     networks:
         - services
 networks:
